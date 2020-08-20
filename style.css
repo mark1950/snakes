@@ -1,0 +1,44 @@
+body {
+    justify-content: center;
+    display: grid;
+    background-color: dimgrey;
+}
+
+.welcome {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 60px;
+    color: dodgerblue;
+}
+
+#board {
+    margin: 40px;
+    height: 800px;
+    width: 800px;
+    display: grid;
+    background-color: cornsilk;
+    border-color: blue;
+    border-left-width: 10px;
+    border-right-width: 10px;
+
+}
+
+.boardGrid {
+    display: grid;
+    grid-template-columns: repeat(16, 50px);
+    grid-template-rows: repeat(16, 50px);
+}
+
+#buttons {
+    margin: 40px;
+    justify-content: center;
+    display: inline-flex;
+}
+
+.resetBtn {
+    height: 50px;
+    width: 120px;
+    border-radius: 8px;
+    background-color: crimson;
+    font-size: 20px;
+}
