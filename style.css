@@ -17,13 +17,9 @@ body {
     width: 800px;
     display: grid;
     background-color: cornsilk;
-    border-color: blue;
-    border-left-width: 10px;
-    border-right-width: 10px;
-
 }
 
-.boardGrid {
+#boardGrid {
     display: grid;
     grid-template-columns: repeat(16, 50px);
     grid-template-rows: repeat(16, 50px);
