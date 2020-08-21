@@ -1,6 +1,6 @@
 let board = document.querySelector('#board');
 let boardGrid = document.querySelector('#boardGrid');
-let sizeBtn = document.querySelector('.sizeBtn');
+
 let gridSize = 16;
 
 
@@ -33,3 +33,13 @@ function makeGrid() {
 
 
 makeGrid();
+
+
+const sizeBtn = document.querySelector('.sizeBtn');
+  sizeBtn.addEventListener('click', () => {
+  let size = Number (prompt('re-sze grid?'));
+  gridSize = size;
+  //console.log(size);
+  //console.log(gridSize);
+  makeGrid();
+});
