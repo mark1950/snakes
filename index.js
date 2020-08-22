@@ -3,8 +3,6 @@ let boardGrid = document.querySelector('#boardGrid');
 
 let gridSize = 16;
 
-
-
 function makeGrid() {
 
   boardGrid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
@@ -12,34 +10,38 @@ function makeGrid() {
 
   for (let i = 0; i < gridSize * gridSize; i++) {
 
-  let colorChange = document.createElement('div');
-  colorChange.classList = '.colorChange';
+    let colorChange = document.createElement('div');
+    colorChange.classList = '.colorChange';
 
-  colorChange.addEventListener('mouseover', mouseOver);
-  function mouseOver() {
-  colorChange.style.backgroundColor = 'red';
-  }
+    colorChange.addEventListener('mouseover', mouseOver);
+    function mouseOver() {
+    colorChange.style.backgroundColor = 'red';
+    }
 
-  boardGrid.appendChild(colorChange);
-
-  const resetBtn =document.querySelector('.resetBtn');
-    resetBtn.addEventListener('click', () => {
-        colorChange.style.background = 'cornsilk';
-    });
+    boardGrid.appendChild(colorChange);
 
   }
 
 };
 
+function clearGrid() {
+  while (boardGrid.hasChildNodes()) {
+    boardGrid.removeChild(boardGrid.firstChild);
+  }
+  makeGrid(gridSize);
+}
 
-makeGrid();
+const resetBtn = document.querySelector('.resetBtn');
+  resetBtn.addEventListener('click', () => {
+    clearGrid();
+  });
 
 
 const sizeBtn = document.querySelector('.sizeBtn');
   sizeBtn.addEventListener('click', () => {
-  let size = Number (prompt('re-sze grid?'));
-  gridSize = size;
-  //console.log(size);
-  //console.log(gridSize);
-  makeGrid();
+    let size = Number (prompt('re-sze grid?'));
+    gridSize = size;
+  clearGrid();
 });
+
+makeGrid();
